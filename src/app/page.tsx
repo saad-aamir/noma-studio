@@ -10,48 +10,56 @@ const galleryItems = [
     category: "Editorial",
     gradient: "linear-gradient(135deg, #3b2a1a 0%, #8b6e4e 40%, #c9a96e 100%)",
     aspect: "aspect-[3/4]", // portrait
+    image: "https://picsum.photos/seed/kyoto-autumn/600/800",
   },
   {
     title: "Coastal Dawn",
     category: "Lifestyle",
     gradient: "linear-gradient(160deg, #1a2a3b 0%, #4a6a7a 50%, #8aafbf 100%)",
     aspect: "aspect-[4/3]", // landscape
+    image: "https://picsum.photos/seed/coastal-dawn/800/600",
   },
   {
     title: "Studio Light",
     category: "Brand",
     gradient: "linear-gradient(145deg, #2a2a2a 0%, #5a5a5a 40%, #9a9a8a 100%)",
     aspect: "aspect-[3/4]",
+    image: "https://picsum.photos/seed/studio-light/600/800",
   },
   {
     title: "Golden Hour",
     category: "Editorial",
     gradient: "linear-gradient(130deg, #4a3520 0%, #b8860b 50%, #daa520 100%)",
     aspect: "aspect-[4/3]",
+    image: "https://picsum.photos/seed/golden-hour/800/600",
   },
   {
     title: "Urban Silence",
     category: "Lifestyle",
     gradient: "linear-gradient(155deg, #1a1a2e 0%, #3a3a5e 45%, #6a6a8e 100%)",
     aspect: "aspect-[3/4]",
+    image: "https://picsum.photos/seed/urban-silence/600/800",
   },
   {
     title: "Botanica",
     category: "Brand",
     gradient: "linear-gradient(140deg, #1a2e1a 0%, #3e5e3a 50%, #6e8e5a 100%)",
     aspect: "aspect-[4/3]",
+    image: "https://picsum.photos/seed/botanica/800/600",
   },
   {
     title: "Mono Portrait",
     category: "Editorial",
     gradient: "linear-gradient(135deg, #0a0a0a 0%, #3a3a3a 50%, #6a6a6a 100%)",
     aspect: "aspect-[3/4]",
+    image: "https://picsum.photos/seed/mono-portrait/600/800?grayscale",
   },
   {
     title: "Warm Terrace",
     category: "Events",
     gradient: "linear-gradient(150deg, #5a3a2a 0%, #a07050 45%, #d4a87a 100%)",
     aspect: "aspect-[4/3]",
+    image: "https://picsum.photos/seed/warm-terrace/800/600",
   },
 ];
 
@@ -175,7 +183,15 @@ export default function Home() {
               <div
                 className="gallery-image absolute inset-0 w-full h-full"
                 style={{ background: item.gradient }}
-              />
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <div className="gallery-overlay">
                 <div>
                   <p className="text-white/70 text-xs tracking-[0.2em] uppercase mb-1">
@@ -227,12 +243,20 @@ export default function Home() {
           {/* Photo placeholder */}
           <div className="reveal reveal-delay-2 order-1 lg:order-2">
             <div
-              className="aspect-[4/5] rounded-sm w-full"
+              className="aspect-[4/5] rounded-sm w-full overflow-hidden"
               style={{
                 background:
                   "linear-gradient(160deg, #2a2018 0%, #6e5a42 40%, #b89a6a 70%, #dcc8a0 100%)",
               }}
-            />
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://picsum.photos/seed/noma-studio-about/800/1000"
+                alt="Noma Studio"
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
